@@ -4,23 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/styles.css">
-    <title>Hexagon Inputs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk&family=Merriweather+Sans&family=Spline+Sans+Mono:wght@500&display=swap" rel="stylesheet">
+
+    <title>Spelling Bee</title>
 </head>
 <body>
+    <h1>Spelling Bee Helper</h1>
     <div class="container">
-        <div class="hexagon-container">
-            <input type="text" name="a" maxlength="1" required>
-            <input type="text" name="b" maxlength="1" required>
-            <input type="text" name="c" maxlength="1" required>
-            <input type="text" name="d" maxlength="1" required>
-            <input type="text" name="e" maxlength="1" required>
-            <input type="text" name="f" maxlength="1" required>
-            <input type="text" name="i" maxlength="1" required>
-
-        </div>
-        <div class="submit-container">
-            <input type="submit" value="Submit" class="submit-button">
-        </div>
+        <svg name="a" viewBox="0 0 200 200" version="1.1">
+            <polygon style="fill:#FAFAD2;stroke:#210000;stroke-width:2.5px" points="183.138438763306,52.0 183.138438763306,148.0 100.0,196.0 16.861561236693902,148.0 16.861561236693902,52.0 100.0,4.0"/>
+        </svg>
+        <input type="text" name="a" id="tr" maxlength="1" onkeyup="moveToNextField(event, 'r')" required autofocus>
+        <svg name="b" viewBox="0 0 200 200" version="1.1">
+            <polygon style="fill:#FAFAD2;stroke:#210000;stroke-width:2.5px" points="183.138438763306,52.0 183.138438763306,148.0 100.0,196.0 16.861561236693902,148.0 16.861561236693902,52.0 100.0,4.0"/>
+        </svg>
+        <input type="text" name="b" id="r" maxlength="1" onkeyup="moveToNextField(event, 'br')" required>
+        <svg name="c" viewBox="0 0 200 200" version="1.1">
+            <polygon style="fill:#FAFAD2;stroke:#210000;stroke-width:2.5px" points="183.138438763306,52.0 183.138438763306,148.0 100.0,196.0 16.861561236693902,148.0 16.861561236693902,52.0 100.0,4.0"/>
+        </svg>
+        <input type="text" name="c" id="br" maxlength="1" onkeyup="moveToNextField(event, 'bl')" required>
+        <svg name="d" viewBox="0 0 200 200" version="1.1">
+            <polygon style="fill:#FAFAD2;stroke:#210000;stroke-width:2.5px" points="183.138438763306,52.0 183.138438763306,148.0 100.0,196.0 16.861561236693902,148.0 16.861561236693902,52.0 100.0,4.0"/>
+        </svg>
+        <input type="text" name="d" id="bl" maxlength="1" onkeyup="moveToNextField(event, 'l')" required>
+        <svg name="e" viewBox="0 0 200 200" version="1.1">
+            <polygon style="fill:#FAFAD2;stroke:#210000;stroke-width:2.5px" points="183.138438763306,52.0 183.138438763306,148.0 100.0,196.0 16.861561236693902,148.0 16.861561236693902,52.0 100.0,4.0"/>
+        </svg>
+        <input type="text" name="e" id="l" maxlength="1" onkeyup="moveToNextField(event, 'tl')" required>
+        <svg name="f" viewBox="0 0 200 200" version="1.1">
+            <polygon style="fill:#FAFAD2;stroke:#210000;stroke-width:2.5px" points="183.138438763306,52.0 183.138438763306,148.0 100.0,196.0 16.861561236693902,148.0 16.861561236693902,52.0 100.0,4.0"/>
+        </svg>
+        <input type="text" name="f" id="tl"maxlength="1" onkeyup="moveToNextField(event, 'tr')" required>
+        <svg name="i" viewBox="0 0 200 200" version="1.1">
+            <polygon style="fill:#3D270A;stroke:#210000;stroke-width:2.5px" points="183.138438763306,52.0 183.138438763306,148.0 100.0,196.0 16.861561236693902,148.0 16.861561236693902,52.0 100.0,4.0"/>
+        </svg>
+        <input type="text" name="i" id="c" maxlength="1" onkeyup="moveToNextField(event, 'submit')" required>
+        <input type="submit" id="submit" value="Submit" class="submit-button">
     </div>
+    <div class="output">
+        
+    </div>
+    <script>
+        function moveToNextField(event, nextFieldID) {
+            if (event.target.value.length === event.target.maxLength) {
+                document.getElementById(nextFieldID).focus();
+            }
+            const outsideFields = ['tl', 'tr', 'bl', 'br', 'l', 'r'];
+            const allOutsideFilled = outsideFields.every(field => {
+                return document.getElementById(field).value.length === document.getElementById(field).maxLength;
+            });
+
+            if (allOutsideFilled) {
+                document.getElementById('c').focus();
+            }
+        }
+    </script>
 </body>
 </html>

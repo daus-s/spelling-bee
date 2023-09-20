@@ -1,27 +1,104 @@
 html, body {
     height: 100%;
     margin: 0 auto;
+    padding: 0 auto;
+    font-family: 'Merriweather Sans', sans-serif;
 }
 input[type=text] {
-    width: .6em;
+    width: 1em;
+    border: none;
+    font-size: 2.7em;
+    border-bottom: 1px solid rgb(36, 36, 36);
+    text-align: center;
+    padding: 0;
+    font-family: 'Spline Sans Mono', monospace;
+
 }
 .container {
+    position: relative;
     height: 60%;
-    width: 100%;
+    aspect-ratio: 1;
     display: flex;
+    left: 50%;
+    transform: translateX(-50%);
     flex-direction: column;
     align-items: center;
+    justify-content: space-between; 
+
 }
 input[type=submit] {
-    width: 16vh;
+    font-family: 'Merriweather Sans', sans-serif;
+    position: absolute;
+    width: 50%;
+    bottom: 0px;
+    transform: translateY(50%);
+    color: #3D270A;
+    font-weight: bold;
+    font-size: 1.9em;
+    border-radius: 25px;
+    background-color: inherit;
+    padding: 3px 2px 3px 2px;
 }
 
 input[name=a] {
     position: absolute;
-    background-color: #E9AB17;
-    top: 0px;
-    right: 0px;
+    top: 24.02%;
+    left: 65%;
+    background-color: #FAFAD2;
+    transform: translateX(-50%) translateY(-50%);
+
 }
+input[name=b] {
+    position: absolute;
+    top: 50%;
+    left: 80%;    
+    background-color: #FAFAD2;
+    transform: translateX(-50%) translateY(-50%);
+
+}
+input[name=c] {
+    position: absolute;
+    top: 75.98%;
+    left: 65%;    
+    background-color: #FAFAD2;
+    transform: translateX(-50%) translateY(-50%);
+
+}
+input[name=d] {
+    position: absolute;
+    top: 75.98%;
+    left: 35%;    
+    background-color: #FAFAD2;
+    transform: translateX(-50%) translateY(-50%);
+
+}
+input[name=e] {
+    position: absolute;
+    top: 50%;
+    left: 20%;    
+    background-color: #FAFAD2;
+    transform: translateX(-50%) translateY(-50%);
+
+}
+input[name=f] {
+    position: absolute;
+    top: 24.02%;
+    left: 35%;    
+    background-color: #FAFAD2;
+    transform: translateX(-50%) translateY(-50%);
+
+}
+input[name=i] {
+    position: absolute;
+    top: 50%;
+    left: 50%;    
+    background-color: #3D270A;
+    transform: translateX(-50%) translateY(-50%);
+    color: #F9F6EE;
+    border-bottom: 1px solid #F9F6EE;
+
+}
+
 
 body {
     background-color: #E9AB17;
@@ -29,4 +106,53 @@ body {
 form {
     height: 100%;
     width: 100%;
+}
+
+svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+
+    width: 36%;
+    height: 36%;
+}
+
+
+svg[name=a] {  
+    top: 24.02%;
+    left: 65%;
+}
+
+svg[name=b] {  
+    top: 50%;
+    left: 80%; 
+}
+svg[name=c] {  
+    top: 75.98%;
+    left: 65%; 
+}
+
+svg[name=d] { 
+    top: 75.98%;
+    left: 35%;  
+}
+svg[name=e] {  
+    top: 50%;
+    left: 20%;  
+}
+
+svg[name=f] {  
+    top: 24.02%;
+    left: 35%;  
+}
+
+svg[name=i] {  
+    top: 50%;
+    left: 50%;  
+}
+
+h1 {
+    text-align: center;
+    color: #210000;
 }
