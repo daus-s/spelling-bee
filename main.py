@@ -16,6 +16,7 @@ def main():
 
     cmd=f'./a.out {args[0]} {args[1]} 1'
     result = subprocess.check_output(cmd, shell=True)
+    print(result[:-2])
 
 
 if __name__ == "__main__":

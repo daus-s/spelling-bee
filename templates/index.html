@@ -13,40 +13,42 @@
 <body>
     <h1>Spelling Bee Helper</h1>
     <div class="container">
-        <svg name="a" viewBox="0 0 200 200" version="1.1">
-            <polygon style="fill:#FAFAD2;stroke:#210000;stroke-width:2.5px" points="183.138438763306,52.0 183.138438763306,148.0 100.0,196.0 16.861561236693902,148.0 16.861561236693902,52.0 100.0,4.0"/>
-        </svg>
-        <input type="text" name="a" id="tr" maxlength="1" onkeyup="moveToNextField(event, 'r')" required autofocus>
-        <svg name="b" viewBox="0 0 200 200" version="1.1">
-            <polygon style="fill:#FAFAD2;stroke:#210000;stroke-width:2.5px" points="183.138438763306,52.0 183.138438763306,148.0 100.0,196.0 16.861561236693902,148.0 16.861561236693902,52.0 100.0,4.0"/>
-        </svg>
-        <input type="text" name="b" id="r" maxlength="1" onkeyup="moveToNextField(event, 'br')" required>
-        <svg name="c" viewBox="0 0 200 200" version="1.1">
-            <polygon style="fill:#FAFAD2;stroke:#210000;stroke-width:2.5px" points="183.138438763306,52.0 183.138438763306,148.0 100.0,196.0 16.861561236693902,148.0 16.861561236693902,52.0 100.0,4.0"/>
-        </svg>
-        <input type="text" name="c" id="br" maxlength="1" onkeyup="moveToNextField(event, 'bl')" required>
-        <svg name="d" viewBox="0 0 200 200" version="1.1">
-            <polygon style="fill:#FAFAD2;stroke:#210000;stroke-width:2.5px" points="183.138438763306,52.0 183.138438763306,148.0 100.0,196.0 16.861561236693902,148.0 16.861561236693902,52.0 100.0,4.0"/>
-        </svg>
-        <input type="text" name="d" id="bl" maxlength="1" onkeyup="moveToNextField(event, 'l')" required>
-        <svg name="e" viewBox="0 0 200 200" version="1.1">
-            <polygon style="fill:#FAFAD2;stroke:#210000;stroke-width:2.5px" points="183.138438763306,52.0 183.138438763306,148.0 100.0,196.0 16.861561236693902,148.0 16.861561236693902,52.0 100.0,4.0"/>
-        </svg>
-        <input type="text" name="e" id="l" maxlength="1" onkeyup="moveToNextField(event, 'tl')" required>
-        <svg name="f" viewBox="0 0 200 200" version="1.1">
-            <polygon style="fill:#FAFAD2;stroke:#210000;stroke-width:2.5px" points="183.138438763306,52.0 183.138438763306,148.0 100.0,196.0 16.861561236693902,148.0 16.861561236693902,52.0 100.0,4.0"/>
-        </svg>
-        <input type="text" name="f" id="tl"maxlength="1" onkeyup="moveToNextField(event, 'tr')" required>
-        <svg name="i" viewBox="0 0 200 200" version="1.1">
-            <polygon style="fill:#3D270A;stroke:#210000;stroke-width:2.5px" points="183.138438763306,52.0 183.138438763306,148.0 100.0,196.0 16.861561236693902,148.0 16.861561236693902,52.0 100.0,4.0"/>
-        </svg>
-        <input type="text" name="i" id="c" maxlength="1" onkeyup="moveToNextField(event, 'submit')" required>
-        <input type="submit" id="submit" value="Submit" class="submit-button">
+        <form id="form" action="/submit" method="post">
+            <svg name="a" viewBox="0 0 200 200" version="1.1">
+                <polygon style="fill:#FAFAD2;stroke:#210000;stroke-width:2.5px" points="183.138438763306,52.0 183.138438763306,148.0 100.0,196.0 16.861561236693902,148.0 16.861561236693902,52.0 100.0,4.0"/>
+            </svg>
+            <input type="text" name="a" id="tr" maxlength="1" onkeyup="moveToNextField(event, 'r')" required autofocus>
+            <svg name="b" viewBox="0 0 200 200" version="1.1">
+                <polygon style="fill:#FAFAD2;stroke:#210000;stroke-width:2.5px" points="183.138438763306,52.0 183.138438763306,148.0 100.0,196.0 16.861561236693902,148.0 16.861561236693902,52.0 100.0,4.0"/>
+            </svg>
+            <input type="text" name="b" id="r" maxlength="1" onkeyup="moveToNextField(event, 'br')" required>
+            <svg name="c" viewBox="0 0 200 200" version="1.1">
+                <polygon style="fill:#FAFAD2;stroke:#210000;stroke-width:2.5px" points="183.138438763306,52.0 183.138438763306,148.0 100.0,196.0 16.861561236693902,148.0 16.861561236693902,52.0 100.0,4.0"/>
+            </svg>
+            <input type="text" name="c" id="br" maxlength="1" onkeyup="moveToNextField(event, 'bl')" required>
+            <svg name="d" viewBox="0 0 200 200" version="1.1">
+                <polygon style="fill:#FAFAD2;stroke:#210000;stroke-width:2.5px" points="183.138438763306,52.0 183.138438763306,148.0 100.0,196.0 16.861561236693902,148.0 16.861561236693902,52.0 100.0,4.0"/>
+            </svg>
+            <input type="text" name="d" id="bl" maxlength="1" onkeyup="moveToNextField(event, 'l')" required>
+            <svg name="e" viewBox="0 0 200 200" version="1.1">
+                <polygon style="fill:#FAFAD2;stroke:#210000;stroke-width:2.5px" points="183.138438763306,52.0 183.138438763306,148.0 100.0,196.0 16.861561236693902,148.0 16.861561236693902,52.0 100.0,4.0"/>
+            </svg>
+            <input type="text" name="e" id="l" maxlength="1" onkeyup="moveToNextField(event, 'tl')" required>
+            <svg name="f" viewBox="0 0 200 200" version="1.1">
+                <polygon style="fill:#FAFAD2;stroke:#210000;stroke-width:2.5px" points="183.138438763306,52.0 183.138438763306,148.0 100.0,196.0 16.861561236693902,148.0 16.861561236693902,52.0 100.0,4.0"/>
+            </svg>
+            <input type="text" name="f" id="tl"maxlength="1" onkeyup="moveToNextField(event, 'tr')" required>
+            <svg name="i" viewBox="0 0 200 200" version="1.1">
+                <polygon style="fill:#3D270A;stroke:#210000;stroke-width:2.5px" points="183.138438763306,52.0 183.138438763306,148.0 100.0,196.0 16.861561236693902,148.0 16.861561236693902,52.0 100.0,4.0"/>
+            </svg>
+            <input type="text" name="i" id="c" maxlength="1" onkeyup="moveToNextField(event, 'submit')" required>
+            <input type="submit" id="submit" value="Submit" class="submit-button">
+        </form>
     </div>
-    <div class="output">
-        
+    <div class="output" id="output">
+        <!--filled values-->
     </div>
-    <script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js">
         function moveToNextField(event, nextFieldID) {
             if (event.target.value.length === event.target.maxLength) {
                 document.getElementById(nextFieldID).focus();
@@ -60,6 +62,22 @@
                 document.getElementById('c').focus();
             }
         }
+        
+        $(document).ready(function() {
+            $('form').submit(function(event) {
+                event.preventDefault();  // Prevent the form from submitting normally
+                
+                $.ajax({
+                    type: 'POST',
+                    url: '/submit',
+                    data: $(this).serialize(),
+                    success: function(data) {
+                        // Update the 'output' div with the returned data
+                        $('#output').html(data);
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html>

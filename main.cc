@@ -17,7 +17,7 @@ char* spacer(string s)
     int l = 16;
     if (s.length() > 16)
     {
-        cout << "fuckery" << endl;
+        cout << "bad formatting issue..." << endl;
     }
     char* b = new char[l-s.length()];
 

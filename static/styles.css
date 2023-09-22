@@ -31,7 +31,7 @@ input[type=submit] {
     position: absolute;
     width: 50%;
     bottom: 0px;
-    transform: translateY(50%);
+    transform: translateY(50%) translateX(50%);
     color: #3D270A;
     font-weight: bold;
     font-size: 1.9em;
