@@ -46,23 +46,28 @@
         </form>
     </div>
     <div class="output" id="output">
-        <!--filled values-->
+        <div id="letters" class="letters">
+            {{ letters }}
+        </div>
+        <div id="center" class="center">
+            {{ center }}
+        </div>
+        <div id="english_words_container" onclick="toggleList('valid_english')">
+            <img id="valid_english_arrow" src="{{ url_for('static', filename='arrow.png') }}" alt="My Image"/>
+            <h2 >Solutions</h2>
+            <ul id="valid_english" style="display: block;">
+                    {{ valid_english_list | safe }}
+            </ul>
+        </div>
+        <div id="all_words_container" onclick="toggleList('all_words')">
+            <img id="all_words_arrow" src="{{ url_for('static', filename='arrow.png') }}" alt="My Image"/>
+            <h2 >All Words</h2>
+            <ul id="all_words" style="display: none;">
+                {{ all_words_list | safe }}
+            </ul>
+        </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js">
-        function moveToNextField(event, nextFieldID) {
-            if (event.target.value.length === event.target.maxLength) {
-                document.getElementById(nextFieldID).focus();
-            }
-            const outsideFields = ['tl', 'tr', 'bl', 'br', 'l', 'r'];
-            const allOutsideFilled = outsideFields.every(field => {
-                return document.getElementById(field).value.length === document.getElementById(field).maxLength;
-            });
-
-            if (allOutsideFilled) {
-                document.getElementById('c').focus();
-            }
-        }
-        
         $(document).ready(function() {
             $('form').submit(function(event) {
                 event.preventDefault();  // Prevent the form from submitting normally
@@ -78,6 +83,35 @@
                 });
             });
         });
+    </script>
+    <script>
+        function moveToNextField(event, nextFieldID) {
+            if (event.target.value.length === event.target.maxLength) {
+                document.getElementById(nextFieldID).focus();
+            }
+            const outsideFields = ['tl', 'tr', 'bl', 'br', 'l', 'r'];
+            const allOutsideFilled = outsideFields.every(field => {
+                return document.getElementById(field).value.length === document.getElementById(field).maxLength;
+            });
+
+            if (allOutsideFilled) {
+                document.getElementById('c').focus();
+            }
+        }
+    </script>
+    <script>
+        function toggleList(listId) {
+            var list = document.getElementById(listId);
+            var arrow = document.getElementById(listId + "_arrow");
+            if (list.style.display === "none") {
+                list.style.display = "block";
+                arrow.style.transform = "rotate(-90deg)"
+            } else {
+                list.style.display = "none";
+                arrow.style.transform = "rotate(0deg)"
+
+            }
+        }
     </script>
 </body>
 </html>

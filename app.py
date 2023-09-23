@@ -2,7 +2,7 @@ import os
 import sys
 import subprocess
 import requests
-from flask import Flask, render_template, request, render_template_string
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -12,7 +12,6 @@ def index():
 
 @app.route('/submit', methods=['POST'])
 def submit():
-    print('hello form')
     # Call the C++ executable with 'entry' as input
     # Process the result and return it
     data = []
@@ -26,25 +25,22 @@ def submit():
     center = request.form.get('i')
     data.append(center)
 
-    print(f'{letters} {center}')
     cmd=f'./main.out {letters} {center} 1'
     cpp_output = subprocess.check_output(cmd, shell=True)[:-2]
     #result is good
     words_list = cpp_output.decode('utf-8').split(', ')
-    f_words_list = []
+    s_words_list = ''
     for word in words_list:
-        print(f'word: {word}')            
+        s_words_list += f'<li>{word}</li>'
+    f_words_list = ''
+    for word in words_list:
         url = f'https://api.dictionaryapi.dev/api/v2/entries/en/{word}'
-        print(url)
         response = requests.request("GET", url)
-        print(response)
-           
+        if response.status_code == 200:
+            f_words_list +=  f'<li>{word}</li>'
 
-    print(words_list)
-    print(f_words_list)
-
-
-    return render_template_string("output.html", letters=letters, center=center, words=words_list, f_words=words_list)
+    
+    return render_template("index.html", letters=letters, center=center, valid_english_list=f_words_list, all_words_list=s_words_list)
 
 if __name__ == '__main__':
     app.run(debug=True)
