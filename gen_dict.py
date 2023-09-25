@@ -1,11 +1,14 @@
 import sys
 import requests
 
-def print_progress_bar(iteration, total, prefix='', length=50, fill='█', empty='░'):
+def print_progress_bar(iteration, total, prefix='', length=50, fill='█', empty='░', word=''):
     percent = ("{:.1f}").format(100 * (iteration / float(total)))
     filled_length = int(length * iteration // total)
     bar = fill * filled_length + empty * (length - filled_length)
-    sys.stdout.write(f'\r{prefix} |{bar}| {percent}% Complete')
+    attachment = ''
+    if not word == '':
+        attachment = f'\t[{word}]'
+    sys.stdout.write(f'\r{prefix} |{bar}| {percent}% Complete{attachment}')
     sys.stdout.flush()
 
 def main():
@@ -37,7 +40,7 @@ def main():
                 #write to dict
                 file.write(line)
         i = i + 1
-        print_progress_bar(i, t, prefix="Progress:")
+        print_progress_bar(i, t, prefix="Progress:", word=word)
         line = words.readline() 
         word = line[:-1]
 
