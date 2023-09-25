@@ -3,6 +3,7 @@ import sys
 import subprocess
 import requests
 from flask import Flask, render_template, request
+from wordmatics import pangram
 
 app = Flask(__name__)
 
@@ -37,10 +38,13 @@ def submit():
         url = f'https://api.dictionaryapi.dev/api/v2/entries/en/{word}'
         response = requests.request("GET", url)
         if response.status_code == 200:
-            f_words_list +=  f'<li>{word}</li>'
+            if pangram(word, letters, center):
+                f_words_list +=  f'<li style="font-weight: 650;">{word}</li>'
+            else:    
+                f_words_list +=  f'<li>{word}</li>'
 
-    
-    return render_template("index.html", letters=letters, center=center, valid_english_list=f_words_list, all_words_list=s_words_list)
+    print(f_words_list)
+    return render_template("index.html", letters="Letters: " + letters, center="Center: " + center, valid_english_list=f_words_list, all_words_list=s_words_list)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(port=4174)
