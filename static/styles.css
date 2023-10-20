@@ -160,7 +160,6 @@ h1 {
 
 img {
     position: absolute;
-    left: 0px;
     top: 30px;
     height: 1.65em;
     aspect-ratio: 1/1;
@@ -271,17 +270,21 @@ input:focus {
 }
 
 .all_words_container {
-    align-items: right;
+    align-items: flex-end;
 }
 
 .valid_english_container {
-    align-items: left;
+    align-items: flex-start;
 }
 #all_words_arrow {
-    left: 190px;
+    right: 130px;
 }
 
 #all_words li {
-    left: 190px;
+    left: 10px;
     position: relative;
+}
+
+#valid_english_arrow {
+    left: 0px;
 }

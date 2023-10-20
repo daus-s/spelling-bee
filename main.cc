@@ -9,7 +9,7 @@
 
 using namespace std;
 
-const char* FILENAME = "/usr/share/dict/words";
+const char* FILENAME = "/Users/daviscarmichael/Documents/TwitchProjects/spelling-bee/words";
 int MODE = 0; //if active then it is python use 
 
 char* spacer(string s)
@@ -117,7 +117,7 @@ string GetStdoutFromCommand(string cmd) {
 }
 
 int main(int argc, char ** argv)
-{
+{   
     if (argc != 4 && argc !=3)
     {
         return 2;
@@ -130,7 +130,7 @@ int main(int argc, char ** argv)
 
     //read words from
     //usr/share/dict/words
-    string wc_cmd = "wc -l /usr/share/dict/words";
+    string wc_cmd = "wc -l /Users/daviscarmichael/Documents/TwitchProjects/spelling-bee/words";
     char** cmd_tkns = get_args(GetStdoutFromCommand(wc_cmd));
     int sz = atoi(cmd_tkns[0]);
     //read /usr/share/dict/words
