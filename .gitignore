@@ -13,6 +13,7 @@ rotate.py
 script.sh
 spelling.sh
 word_check.py
+.DS_Store
 
 # Zip files
 
