@@ -1,0 +1,26 @@
+# Directories
+logs/
+__pycache__/
+
+# Specific Files
+a.out
+gen_pylist.py
+main.cc
+main.py
+main.out
+python.py
+rotate.py
+script.sh
+spelling.sh
+word_check.py
+
+# Zip files
+
+# Compiled binaries
+*.out
+
+# Logs
+*.log
+
+# Environment file (if applicable)
+.env
