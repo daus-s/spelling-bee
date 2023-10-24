@@ -1,12 +1,9 @@
 # Directories
 logs/
-static/
 __pycache__/
-templates/
 
 # Specific Files
 a.out
-app.py
 gen_pylist.py
 main.cc
 main.py
@@ -16,7 +13,6 @@ rotate.py
 script.sh
 spelling.sh
 word_check.py
-wordmatics.py
 
 # Zip files
 
