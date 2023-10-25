@@ -2,7 +2,7 @@
 
 # HOMEBREW, PYTHON, FLASK REQUIRED
 #installed flag
-installed_flag=true
+installed_flag=false
 if !($installed_flag);
     then
         # check if homebrew exists
