@@ -30,7 +30,8 @@ This repository contains the code used to solve the 'Spelling Bee' game from [NY
     
       **Figure 1.** View of extracting the zip file using the default MacOS extracting tool. The size of the extracted folder is about 6.3MB
     
-    <img width="577" alt="Screenshot 2023-10-24 at 2 46 38 PM" src="https://github.com/daus-s/spelling-bee/assets/48344654/8f68de16-6e80-4714-9f26-70275828fcc1">
+    <img width="577" alt="Screenshot 2023-10-27 at 12 45 10 AM" src="https://github.com/daus-s/spelling-bee/assets/48344654/c0c11fdd-e0d3-4be6-beed-d11ec7ce3bcd">
+
   
     **Figure 2.** The extracted package contents
   - ##### Terminal/CLI
