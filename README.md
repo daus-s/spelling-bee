@@ -26,8 +26,8 @@ This repository contains the code used to solve the 'Spelling Bee' game from [NY
 - Extract zip file via CLI or in Finder
   - ##### Finder
     - Extract the zip file using the default zip utility built into MacOS. 
-    <img width="584" alt="Screenshot 2023-10-24 at 2 33 20 PM" src="https://github.com/daus-s/spelling-bee/assets/48344654/648081c2-f822-47a7-aacc-363db565d8a9">
-    
+    <img width="584" alt="Screenshot 2023-10-27 at 12 46 45 AM" src="https://github.com/daus-s/spelling-bee/assets/48344654/d763e25d-2c24-4d26-a4c3-56f99275e496">
+
       **Figure 1.** View of extracting the zip file using the default MacOS extracting tool. The size of the extracted folder is about 6.3MB
     
     <img width="577" alt="Screenshot 2023-10-27 at 12 45 10 AM" src="https://github.com/daus-s/spelling-bee/assets/48344654/c0c11fdd-e0d3-4be6-beed-d11ec7ce3bcd">
