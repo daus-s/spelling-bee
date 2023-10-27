@@ -42,7 +42,9 @@ This repository contains the code used to solve the 'Spelling Bee' game from [NY
   - Navigate into the package directory.
     - `user$ cd ~/Downloads/spelling-bee/package/`
     - `user$ ls`
-      <img width="606" alt="Screenshot 2023-10-24 at 3 03 53 PM" src="https://github.com/daus-s/spelling-bee/assets/48344654/b627c811-90f2-4d58-9d4c-5ecf19f1cec4">
+   
+      <img width="492" alt="Screenshot 2023-10-27 at 12 50 20 AM" src="https://github.com/daus-s/spelling-bee/assets/48344654/6c9a8acc-0891-46bc-b2af-e19511d79fb8">
+      
       **Figure 3.** Output of the previous commands.
   - Run the installer script via `./installer.sh`
     - If this error: `-bash: ./installer.sh: Permission denied`, is generated run: `chmod +x installer.sh`
