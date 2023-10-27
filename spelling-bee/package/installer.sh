@@ -29,12 +29,13 @@ if !($installed_flag);
 
         dir=$(pwd)
         #before moving the package contents
-        sed -i '' "s|{PATH_TO_DIRECTORY}|${dir}|g" Spelling\ Bee.app/Contents/document.wflow
         cp -a ./Spelling\ Bee.app /Applications/
+	cd ../../
+	cp -a spelling-bee ~/ #move spelling-bee/package
 
         #flip installed flag to true
-        sed  -i '' "5s#false#true#" ./installer.sh
+        sed  -i '' "5s#false#true#" spelling-bee/package/installer.sh
     else
         echo "Already installed. Exiting..."
-        sleep 2
+        sleep 1
 fi

@@ -63,7 +63,7 @@
 #WELCOME
 #!/bin/bash
 
-cd {PATH_TO_DIRECTORY}
+cd ~/spelling-bee
 if pgrep -f "Spelling\ Bee" &gt; /dev/null; then
     echo "Existing instance found. Terminating..."
     pkill -f "Spelling\ Bee"
@@ -75,9 +75,9 @@ if lsof -Pi :4174 -sTCP:LISTEN -t &gt;/dev/null ; then
     lsof -t -i :4174 | xargs kill
 fi
 
-/usr/bin/python3 ~/Documents/TwitchProjects/spelling-bee/package/src/app.py &amp;
+/usr/bin/python3 ~/spelling-bee//package/src/app.py &amp;
 FLASK_PID=$! 
-sleep 5
+sleep 1
 open -na "Google Chrome" --args --new-window "http://localhost:4174" --incognito
 sleep 3600
 kill $FLASK_PID
@@ -99,7 +99,7 @@ kill $FLASK_PID
 #WELCOME
 #!/bin/bash
 
-cd {PATH_TO_DIRECTORY}
+cd ~/spelling-bee
 if pgrep -f "Spelling\ Bee" &gt; /dev/null; then
     echo "Existing instance found. Terminating..."
     pkill -f "Spelling\ Bee"
@@ -111,9 +111,9 @@ if lsof -Pi :4174 -sTCP:LISTEN -t &gt;/dev/null ; then
     lsof -t -i :4174 | xargs kill
 fi
 
-/usr/bin/python3 ~/Documents/TwitchProjects/spelling-bee/package/src/app.py &amp;
+/usr/bin/python3 ~/spelling-bee/package/src/app.py &amp;
 FLASK_PID=$! 
-sleep 5
+sleep 1
 open -na "Google Chrome" --args --new-window "http://localhost:4174" --incognito
 sleep 3600
 kill $FLASK_PID

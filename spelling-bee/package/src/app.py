@@ -3,6 +3,9 @@ import wordmatics as wm
 
 app = Flask(__name__)
 
+app.template_folder = '../templates'
+app.static_folder='../static'
+
 @app.route('/')
 def index():
     return render_template('index.html')
