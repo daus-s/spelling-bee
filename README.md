@@ -75,11 +75,26 @@ Port No.
 4174
 
 ### Checking Words against a 'more correct' list
-There are many words in the list that Apple has on disk that match the requirements of NYT Games Spelling Bee but are not considered to be words in their word list. The first iterations were using longer and longer prompts on ChatGPT, however, this proved inefficient and not rigourous. As Alexander Kurz says "if you need to be right 100% of the time you must use math; 1% wrong in one million is still a lot." The ext solution was to not remove any assuming NYT Games list was a subset of `/usr/shared/dict/words/` (which b.t.w. exists on all Macs if you ever need a set of all words)
+There are many words in the list that Apple has on disk that match the requirements of NYT Games Spelling Bee but are not considered to be words in their word list. The first iterations were using longer and longer prompts on ChatGPT, however, this proved inefficient and not rigorous. As Alexander Kurz says "If you need to be right 100% of the time you must use math; 1% wrong in one million is still a lot." The next solution was to not remove any assuming NYT Games list was a subset of `/usr/shared/dict/words/` (which b.t.w. exists on all Macs if you ever need a set of all words)
 
 <img width="487" alt="Screenshot 2023-10-27 at 1 31 24 AM" src="https://github.com/daus-s/spelling-bee/assets/48344654/6040eaf4-347f-4f3d-ad37-54df609df846">
 
-**Figure 4.** $$A \subseteq B$$, where `/usr/shared/dict/words` is *A*, and B is the set that NYT Games uses.
-
-### Computation time and C vs. Python
+**Figure 4.** $A \subseteq B$, where `/usr/shared/dict/words` is *A*, and B is the set that NYT Games uses. 
+The next solution was to create a more rigorous and comprehensive dictionary. This was done using a script that pinged the [dictionaryapi.dev](https://dictionaryapi.dev/) for each word in the Apple dictionary. If the response code was 200 the word was added. However, the final version of the app includes both the list corrected by the dictionaryAPI script and the list of words from Apple to guarantee that there are no words missing. Look to the future developments section to see how this can be improved. 
+### Pinging DictionaryAPI
+As stated before a script was used to validate or invalidate each word in the Apple set. The script took approximately 3 days as the API has a request limit for every 300 seconds. The limiter is set to 450 requests per 300,000 milliseconds. 
+```
+limiter = rateLimit({
+        windowMs: 5 * 60 * 1000, // 5 minutes
+        max: 450 // limit each IP to 450 requests per windowMs
+    }),
+```
+The script would often freeze and stop querying which is not the desired behavior for a script that needs to run continuously. The solution was to check if the response code was 429 and then wait the limiter time. It would then resume execution after that. 
+Issues arose with the previous version because the first word that hit 429 would not be validated. This meant that the only fully working versions would use the response code check and sleep logic.
+### Computation time and C++ vs. Python
 ## Future Developments
+
+(TKinter to run as native app)
+(Check if 200 -> check inn lang == 'en' -> check type != Proper noun)
+(Generate a list from dictiory API)
+(moove to c++ code execution)
