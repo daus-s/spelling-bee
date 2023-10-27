@@ -78,6 +78,7 @@ Port No.
 There are many words in the list that Apple has on disk that match the requirements of NYT Games Spelling Bee but are not considered to be words in their word list. The first iterations were using longer and longer prompts on ChatGPT, however, this proved inefficient and not rigourous. As Alexander Kurz says "if you need to be right 100% of the time you must use math; 1% wrong in one million is still a lot." The ext solution was to not remove any assuming NYT Games list was a subset of `/usr/shared/dict/words/` (which b.t.w. exists on all Macs if you ever need a set of all words)
 
 <img width="487" alt="Screenshot 2023-10-27 at 1 31 24 AM" src="https://github.com/daus-s/spelling-bee/assets/48344654/6040eaf4-347f-4f3d-ad37-54df609df846">
+
 **Figure 4.** $$A \subseteq B$$, where `/usr/shared/dict/words` is *A*, and B is the set that NYT Games uses.
 
 ### Computation time and C vs. Python
